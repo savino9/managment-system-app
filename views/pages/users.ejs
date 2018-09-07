@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+</head>
+<body class="container">
+
+<header>
+    <% include ../partials/header %>
+</header>
+
+<main>
+    <div class="jumbotron">
+        <h1>User Page</h1>
+        <p>Welcome to the managment system app</p>
+    </div>
+    <div class="jumbotron">
+    	<ul>
+            <% for(var user of users) { %>
+                <li>First Name: <%= user.firstname %> - Last Name: <%= user.lastname -%> </li>
+                <li style='list-style: none;'>email: <%= user.email %></li>
+            <% } %>
+    	</ul>
+    </div>
+</main>
+
+<footer>
+    <% include ../partials/footer %>
+</footer>
+
+</body>
+</html>

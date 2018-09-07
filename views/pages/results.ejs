@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <% include ../partials/head %>
+</head>
+<body class="container">
+
+<header>
+  <% include ../partials/header %>
+</header>
+
+<main>
+  <div class="jumbotron">
+    <h1>Search User</h1>
+    <p>Welcome to the managment system app</p>
+  </div>
+  <div class="jumbotron">
+    <% if (usrFinded.length > 0) { %>
+        User details: 
+        <li>Name: <%= usrFinded[0] %> </li>
+        <li>Surname: <%= usrFinded[1] %> </li>
+        <li>Email: <%= usrFinded[2] %> </li>
+    <% } else { %>
+    <li>Sorry user not found!</li>
+    <% } %>
+  </div>
+</main>
+
+<footer>
+  <% include ../partials/footer %>
+</footer>
+
+</body>
+</html>
