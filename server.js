@@ -51,7 +51,7 @@ module.exports = {
 					let firstname = content[i].firstname.toLowerCase();
 					let lastname = content[i].lastname.toLowerCase();
 
-					if (prop1 == firstname || prop2 == lastname) {
+					if (prop1 == firstname || prop1 == lastname) {
 						console.log(`yeeah ${prop1}, you're in the server!`);
 						usrFinded.push(content[i].firstname, content[i].lastname, content[i].email);
 						console.log(`new array with results: ${usrFinded}`);

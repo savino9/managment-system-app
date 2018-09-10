@@ -17,8 +17,8 @@
     <div class="jumbotron">
     	<ul>
             <% for(var user of users) { %>
-                <li>First Name: <%= user.firstname %> - Last Name: <%= user.lastname -%> </li>
-                <li style='list-style: none;'>email: <%= user.email %></li>
+                <li><span style="font-weight: 800;">First Name</span>: <%= user.firstname %> - <span style="font-weight: 800;">Last Name</span>: <%= user.lastname -%> </li>
+                <li style="list-style: none;"><span style="font-weight: 800;">email</span>: <%= user.email %></li>
             <% } %>
     	</ul>
     </div>
