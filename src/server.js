@@ -4,12 +4,16 @@ module.exports = {
 		const path = require('path');
 		const ejs = require('ejs');
 		const bodyParser = require('body-parser');
+		const fs = require('fs');
 
 		// start express
 		const app = express();
 
+		// app.use(express.static('src'));
+
 		// set the view engine to ejs
 		app.set('views', './views/pages');
+		app.set('src', './src');
 		app.set('view engine', 'ejs');
 
 		// body parser
@@ -22,13 +26,31 @@ module.exports = {
 
 		// render the usr page 
 		app.get('/users', (req, res) => { 
-			const fs = require('fs');
 			fs.readFile('./users.json', 'utf-8', (err, data) => {
 				const content = JSON.parse(data);
 				res.render('users', {
 					users: content
 				});
 			});  
+		});
+
+		// post request for users
+		app.post('/users', (req, res) => {
+			let request = req.body;
+			let input = request.name;
+			fs.readFile('users.json', 'utf-8', (err,data) => {
+				let content = JSON.parse(data);
+				// console.log(content.length);
+				let usersIn = {};
+				for (var i = 0; i < content.length; i++) {
+					let firstname = content[i].firstname.toLowerCase();
+					// console.log(firstname);
+					if(firstname.includes(input)){
+						usersIn[i] = firstname;
+					}
+				}
+				res.send(usersIn);
+			});	
 		});
 
 		// render the form page
@@ -38,19 +60,15 @@ module.exports = {
 
 		// post request for search
 		app.post('/search' , (req, res) => {
-			// console.log("req.body"+req.body);
 			let obj = req.body;
 			let prop1 = obj.firstname;
 			let prop2 = obj.lastname;
 			let usrFinded = [];
-			const fs = require('fs');
 			fs.readFile('./users.json', 'utf-8', (err, data) => {
 				const content = JSON.parse(data);
-				// console.log(content[0].firstname);
 				for (var i = 0; i < content.length; i++) {
 					let firstname = content[i].firstname.toLowerCase();
 					let lastname = content[i].lastname.toLowerCase();
-
 					if (prop1 == firstname || prop1 == lastname) {
 						console.log(`yeeah ${prop1}, you're in the server!`);
 						usrFinded.push(content[i].firstname, content[i].lastname, content[i].email);
@@ -73,9 +91,7 @@ module.exports = {
 			let obj = req.body;
 			let firstname = obj.firstname;
 			let lastname = obj.lastname;
-			let email = obj.Email;
-
-			const fs = require('fs');
+			let email = obj.Email;///
 
 			fs.readFile('./users.json', 'utf-8', (err, data) => {
 				const content = JSON.parse(data);

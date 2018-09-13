@@ -17,8 +17,31 @@
   <div class="jumbotron">
   	<form action="" method="post" >
 		  <h4>Search:</h4>
-		  <input type="text" name="firstname" placeholder="Mickey"><br><br>
-		  <input type="submit" value="Submit">
+		  <input id="input_search" type="text" name="firstname" placeholder="Mickey"><br><br>
+        <ul id="suggestions" class="list-group"></ul>
+      <input type="submit" value="Submit">
+      
+      
+      <script>
+        $(document).ready(() => {
+          $("#input_search").keyup((e) => {          
+            
+            let name = $('#input_search').val();
+            if (name != '') {
+              // sendind data using post
+              let posting = $.post('/users', {name:name});
+              posting.done((data) => {
+                // console.log(data);
+                for(const el in data){
+                  console.log(el);
+                  $('#suggestions').append(`<li class="list-group-item" style="list-style:none;">${data[el]}</li>`);
+                }
+              })
+            }
+            $('#suggestions').empty();       
+          });
+        });
+      </script>
 	  </form>
   </div>
 </main>
