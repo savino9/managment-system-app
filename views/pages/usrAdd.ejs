@@ -15,21 +15,27 @@
     <p>Welcome to the managment system app</p>
   </div>
   <div class="jumbotron">
-  	<form action="" method="post" >
-        <div class="add addName">
-          <p>First name:</p>
-          <input id="input_search" type="text" name="firstname" value="">
+    <div class="container-2">
+    	<form action="" method="post">
+        <div class="usrAdd-form">
+          <div class="add addName">
+            <p>First name:</p>
+            <input id="input_search" type="text" name="firstname" value="" autocomplete="off">
+          </div>
+          <div class="add addlname">
+            <p>Last name:</p>
+            <input id="input_search" type="text" name="lastname" value="" autocomplete="off">
+          </div>
+          <div class="add addEmail">
+            <p>Email:</p>
+            <input id="input_search" type="email" name="Email" value="" autocomplete="off">
+          </div>
+          <div class="add addSub">
+  		      <input type="submit" value="Submit" class="btn btn-primary btn-lg btn-block">
+          </div>
         </div>
-        <div class="add addlname">
-          <p>Last name:</p>
-          <input id="input_search" type="text" name="lastname" value="">
-        </div>
-        <div class="add addEmail">
-          <p>Email:</p>
-          <input id="input_search" type="email" name="Email" value="">
-        </div>
-		  <input type="submit" value="Submit"><br>
-	  </form>
+      </form>
+    </div>  
   </div>
 </main>
 

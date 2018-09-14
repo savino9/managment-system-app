@@ -3,11 +3,20 @@ body {
 	background-size: cover;
 }
 
+.navbar-header {
+  float: right;
+}
+
 .jumbotron {
 	background-color: #eeeeeec4;
 }
 
 /*custom style search input*/
+
+input:focus,
+button:focus {
+    outline: none;
+}
 
 .container-1 {
   overflow: hidden;
@@ -103,8 +112,7 @@ body {
   border-radius: 5px;
 }
 
-.usrAdd-form {
-  min-height: 120px; 
+.usrAdd-form { 
 	display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -115,13 +123,15 @@ body {
   justify-content: space-around;
 }
 
-.add-btn {
-	padding: 0% 2%;
-	text-align: center;
+.container-2 p{
+  margin: 10px 0px;
 }
 
-.addButton {
-	width: 100%;
+.addSub {
+  align-self: flex-end;
+
 }
 
-
+.addSub input {
+  height: 50px;
+}
