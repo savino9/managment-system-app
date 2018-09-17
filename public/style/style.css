@@ -1,0 +1,137 @@
+body {
+	background-image: url(img/bg.jpg);
+	background-size: cover;
+}
+
+.navbar-header {
+  float: right;
+}
+
+.jumbotron {
+	background-color: #eeeeeec4;
+}
+
+/*custom style search input*/
+
+input:focus,
+button:focus {
+    outline: none;
+}
+
+.container-1 {
+  overflow: hidden;
+  width: 300px;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+ 
+.container-1 input#input_search {
+  width: 300px;
+  height: 50px;
+  background: #2b303b;
+  border: none;
+  font-size: 10pt;
+  float: left;
+  color: #fff;
+  padding-left: 15px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.container-1 input#input_search::-webkit-input-placeholder {
+   color: #65737e;  
+}
+ 
+.container-1 input#input_search:-moz-placeholder { /* Firefox 18- */
+   color: #65737e;  
+}
+ 
+.container-1 input#input_search::-moz-placeholder {  /* Firefox 19+ */
+   color: #65737e;  
+}
+ 
+.container-1 input#input_search:-ms-input-placeholder {  
+   color: #65737e;  
+}
+
+.container-1 button {
+  -webkit-border-top-right-radius: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  -moz-border-radius-topright: 5px;
+  -moz-border-radius-bottomright: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+ 
+  border: none;
+  background: #232833;
+  height: 50px;
+  width: 50px;
+  color: #4f5b66;
+  opacity: 0;
+  font-size: 10pt;
+ 
+  -webkit-transition: all .55s ease;
+  -moz-transition: all .55s ease;
+  -ms-transition: all .55s ease;
+  -o-transition: all .55s ease;
+  transition: all .55s ease;
+}
+
+/*over effects*/
+.container-1:hover button, .container-1:active button, .container-1:focus button{
+    outline: none;
+    opacity: 1;
+    margin-left: -50px;
+}
+ 
+.container-1:hover button:hover {
+  background: white;
+}
+
+/*---------------------------------*/
+
+/*custom style usrAdd*/
+
+.container-2 {
+	width: 100%;
+	height: 100%;
+}
+
+.container-2 input#input_search { 
+  width: 300px;
+  height: 50px;
+  background: #2b303b;
+  border: none;
+  font-size: 10pt;
+  float: left;
+  color: #fff;
+  padding-left: 15px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.usrAdd-form { 
+	display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  
+  -webkit-flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.container-2 p{
+  margin: 10px 0px;
+}
+
+.addSub {
+  align-self: flex-end;
+
+}
+
+.addSub input {
+  height: 50px;
+}

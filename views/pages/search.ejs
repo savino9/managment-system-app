@@ -12,13 +12,16 @@
 <main>
   <div class="jumbotron">
     <h1>Search User</h1>
-    <p>Welcome to the managment system app</p>
-  </div>
-  <div class="jumbotron">
-  	<form action="" method="post" >
-		  <h4>Search:</h4>
-		  <input type="text" name="firstname" placeholder="Mickey"><br><br>
-		  <input type="submit" value="Submit">
+    <h3>How to search</h3>
+    <p>Click the enter button or hover and then click the search icon on the right side</p>
+    <form action="" method="post" autocomplete="off">
+      <div class="container-1">
+  		  <input id="input_search" type="text" name="firstname" placeholder="Search..." autocomplete="off">
+        <button id="btn" type="submit" value="Submit">
+          <span class="icon"><i class="glyphicon glyphicon-search"></i></span>
+        </button>      
+        <ul id="suggestions" class="list-group"></ul>
+      </div>
 	  </form>
   </div>
 </main>
@@ -26,6 +29,29 @@
 <footer>
   <% include ../partials/footer %>
 </footer>
+
+<script>
+  $(document).ready(() => {
+    $("#input_search").on("keydown", (e) => {  
+      let name = $('#input_search').val();
+      // sendind data using post
+      let posting = $.post('/users', {name:name});
+      posting.done((data) => {
+        let arr = [];
+        for(const el in data){
+          $('#suggestions').append(`<li class="list-group-item" style="list-style:none;"><a href="#" title="">${data[el]}</a></li>`);
+        }
+        $("a").click(function(e) {
+          e.preventDefault();
+          let val = $(this).html();
+          $('#input_search').val(val);
+          $('#suggestions').empty(); 
+        });
+      }); //end .done
+      $('#suggestions').empty();       
+    });
+  });
+</script>
 
 </body>
 </html>
