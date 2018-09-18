@@ -15,7 +15,7 @@ body {
 
 input:focus,
 button:focus {
-    outline: none;
+  outline: none;
 }
 
 .container-1 {
@@ -40,19 +40,19 @@ button:focus {
 }
 
 .container-1 input#input_search::-webkit-input-placeholder {
-   color: #65737e;  
+  color: #65737e;  
 }
  
 .container-1 input#input_search:-moz-placeholder { /* Firefox 18- */
-   color: #65737e;  
+  color: #65737e;  
 }
  
 .container-1 input#input_search::-moz-placeholder {  /* Firefox 19+ */
-   color: #65737e;  
+  color: #65737e;  
 }
  
 .container-1 input#input_search:-ms-input-placeholder {  
-   color: #65737e;  
+  color: #65737e;  
 }
 
 .container-1 button {
@@ -80,9 +80,9 @@ button:focus {
 
 /*over effects*/
 .container-1:hover button, .container-1:active button, .container-1:focus button{
-    outline: none;
-    opacity: 1;
-    margin-left: -50px;
+  outline: none;
+  opacity: 1;
+  margin-left: -50px;
 }
  
 .container-1:hover button:hover {
@@ -118,7 +118,6 @@ button:focus {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  
   -webkit-flex-flow: row wrap;
   justify-content: space-around;
 }
@@ -129,7 +128,6 @@ button:focus {
 
 .addSub {
   align-self: flex-end;
-
 }
 
 .addSub input {
