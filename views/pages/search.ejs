@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <% include ../partials/head %>
@@ -39,18 +38,13 @@
         let posting = $.post('/users', {name:name});
         posting.done((data) => {
           let start = Date.now();
-
           console.log('starting timer');
-
-        
           let millisec = Date.now() - start;  
-
           let arr = [];
           for(const el in data){
             $('#suggestions').append(
             `<li class="list-group-item" style="list-style:none;"><a href="#" title="">${data[el]}</a></li>`);
           }
-        
           $("a").click(function(e) {
             e.preventDefault();
             let val = $(this).html();
@@ -59,7 +53,6 @@
           });
           console.log("seconds elapsed = " + Math.floor(millisec/1000));
         }); //end .done
-      
       }, 300);
       $('#suggestions').empty();       
     });

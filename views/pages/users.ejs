@@ -1,7 +1,6 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
-    <% include ../partials/head %>
+  <% include ../partials/head %>
 </head>
 <body class="container">
 
@@ -10,22 +9,22 @@
 </header>
 
 <main>
-    <div class="jumbotron">
-        <h1>User Page</h1>
-        <p>Welcome to the managment system app</p>
-    </div>
-    <div class="jumbotron">
-    	<ul>
-            <% for(var user of users) { %>
-                <li><span style="font-weight: 800;">First Name</span>: <%= user.firstname %> - <span style="font-weight: 800;">Last Name</span>: <%= user.lastname -%> </li>
-                <li style="list-style: none;"><span style="font-weight: 800;">email</span>: <%= user.email %></li>
-            <% } %>
-    	</ul>
-    </div>
+  <div class="jumbotron">
+    <h1>User Page</h1>
+    <p>Welcome to the managment system app</p>
+  </div>
+  <div class="jumbotron">
+  	<ul>
+      <% for(var user of users) { %>
+        <li><span style="font-weight: 800;">First Name</span>: <%= user.firstname %> - <span style="font-weight: 800;">Last Name</span>: <%= user.lastname -%> </li>
+        <li style="list-style: none;"><span style="font-weight: 800;">email</span>: <%= user.email %></li>
+      <% } %>
+  	</ul>
+  </div>
 </main>
 
 <footer>
-    <% include ../partials/footer %>
+  <% include ../partials/footer %>
 </footer>
 
 </body>
